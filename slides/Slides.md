@@ -1,125 +1,175 @@
 ---
 marp: true
-theme: default
-footer: 'https://example.com'
-style: |
-  .columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-  .columns3 {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  } 
-  img[alt~="center"] {
-    display: block;
-    margin: 0 auto;
-  }
-  .fa-twitter { color: aqua; }
-  .fa-mastodon { color: purple; }
-  .fa-linkedin { color: blue; }
-  .fa-window-maximize { color: skyblue; }
-
-  svg[id^="mermaid-"] { 
-    min-width: 480px; 
-    max-width: 960px; 
-    min-height: 360px; 
-    max-height: 600px; 
-  }
-
-  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'
+theme: custom-default
+transition: cover
+footer: 'https://chris-ayers.com'
 ---
 
-# My Presentation
-![bg right](https://picsum.photos/800/600)
+<!-- _footer: 'https://github.com/Codebytes/sre-devops-platform-eng' -->
+
+![bg left w:500px](./img/sre-devops-plat-eng.drawio.svg)
+
+# <!--fit--> SRE, DevOps, Platform Engineering
+
+![w:120](img/portrait.png)
+## Chris Ayers
 
 ---
 
-<!-- Speaker Notes -->
-## Slide 1
+![bg left:40%](./img/portrait.png)
 
-- Item 1
-- Item 2
-- Item 3
-<!-- Can have multiple on a slide -->
+## Chris Ayers
+### Senior Customer Engineer<br>Microsoft
 
----
-
-## Slide 2
-<!-- Can also do a multiline
-comment that will show in notes -->
-
-![Image](https://picsum.photos/800/600)
+<i class="fa-brands fa-twitter"></i> Twitter: @Chris\_L\_Ayers
+<i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
+<i class="fa-brands fa-linkedin"></i> LinkedIn: [chris-l-ayers](https://linkedin.com/in/chris-l-ayers/)
+<i class="fa fa-window-maximize"></i> Blog: [https://chris-ayers.com/](https://chris-ayers.com/)
+<i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
 
 ---
 
-## Slide 3
+# Agenda
 
-> This is a quote.
-
----
-
-## Slide 4
-
-| Column 1 | Column 2 |
-| -------- | -------- |
-| Item 1   | Item 2   |
-| Item 3   | Item 4   |
+- Introduction to SRE
+- Dive into DevOps
+- Exploring Platform Engineering
 
 ---
 
-![bg opacity](https://picsum.photos/800/600?image=53)
-## Slide 5
+![bg left:40%](./img/reliability.jpg)
 
-<div class="columns">
-<div>
-
-## Left
-
-- 1
-- 2
-
-</div>
-<div>
-
-## Right
-
-- 3
-- 4
-
-</div>
-</div>
+# Introduction to SRE
 
 ---
 
-## Slide 6
-
-<i class="fa-brands fa-twitter"></i> Twitter: 
-<i class="fa-brands fa-mastodon"></i> Mastodon: 
-<i class="fa-brands fa-linkedin"></i> LinkedIn: 
-<i class="fa fa-window-maximize"></i> Blog: 
-<i class="fa-brands fa-github"></i> GitHub: 
+SRE, or Site Reliability Engineering, originated at Google when they tasked a team to enhance the reliability of their services.
 
 ---
 
-# <!--fit--> Large Text
+## Key Concepts of SRE
 
 ---
 
-<!-- Needed for mermaid, can be anywhere in file except frontmatter -->
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
+- **Software Engineering meets Systems Administration:** SRE applies software engineering principles to operations tasks.
 
-# Mermaid
+---
 
-<div class="mermaid">
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-</div>
+| SLI | SLO | SLA |
+|---|---|---|
+| Service Level Indicator | Service Level Objective | Service Level Agreement |
+| Metrics that provide a quantitative measure of the level of service. | A target level or range of performance for the SLI over a period of time. | A formal, often contractual agreement between a service provider and its users that defines the expected performance and availability metrics, as well as penalties for not meeting them. |
+
+---
+
+# Error Budgets
+
+---
+
+## Components of Error Budgets
+
+1. **Objective:** The desired success level, typically a percentage.
+    - **Example:** 99.95%
+2. **SLI (Service Level Indicator):** An evaluation used to differentiate the number of failed events.
+    - **Example:** 95th percentile latency of API requests over 5 mins is < 100ms.
+3. **Timeframe:** Introducing a recency bias to the SLI.
+    - **Example:** Previous 28 days.
+
+---
+
+## Constructing an SLO
+
+Given the example components, the SLO can be expressed as:
+
+> "99.95% of the 95th percentile latency of API requests over 5 mins is < 100ms over the previous 28 days."
+
+---
+
+## Calculating the Error Budget
+
+The Error Budget is derived from:
+> Error Budget = 1 - Objective of the SLO
+
+**Example Calculation:**
+(1 - .9995 = .0005) or 0.05%
+
+Given a 28-day timeframe, this translates to an error "budget" of:
+> 20.16 minutes (.0005 * (28 * 24 * 60))
+
+
+---
+
+- **Infrastructure as Code (IaC):** Automating infrastructure management.
+
+---
+
+![bg left:40%](./img/devops.jpg)
+
+# Dive into DevOps
+
+---
+
+DevOps promotes collaboration between development and operations teams through a set of practices and cultural philosophies.
+
+---
+
+## Key Concepts of DevOps
+
+- **CI/CD:** Automatic build, test, and deploy processes.
+
+---
+
+- **Infrastructure as Code:** Automation of infrastructure tasks.
+
+---
+
+- **Feedback Loops:** Quick detection and resolution of issues.
+
+---
+
+- **Collaborative Culture:** Breaking silos and shared responsibilities.
+
+---
+
+![bg left:40%](./img/platform.jpg)
+
+# Exploring Platform Engineering
+
+---
+
+Platform Engineering involves building and managing scalable platforms for deploying applications and services.
+
+---
+
+## Key Concepts of Platform Engineering
+
+- **Self-service Platforms:** Empowering developers to deploy and scale.
+
+---
+
+- **Abstract Complexity:** Simplifying infrastructure complexities for developers.
+
+---
+
+- **Microservices & Containers:** Using architectures like Kubernetes.
+
+---
+
+- **Scaling & Performance:** Managing large-scale demands and optimizing resources.
+
+---
+
+## Conclusion
+
+---
+
+SRE, DevOps, and Platform Engineering intersect at ensuring efficient and reliable software delivery and operation.
+
+---
+
+**Key Takeaways**
+
+- **Collaboration & Automation:** Central to all disciplines.
+- **Continuous Improvement:** Better processes and tools.
+- **End-to-end Responsibility:** From code to operation.
+
