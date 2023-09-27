@@ -9,7 +9,6 @@ footer: 'https://chris-ayers.com'
 
 ![bg left w:500px](./img/sre-devops-plat-eng.drawio.svg)
 
-# <!--fit--> SRE, DevOps, Platform Engineering
 
 ![w:120](img/portrait.png)
 ## Chris Ayers
@@ -96,10 +95,29 @@ The Error Budget is derived from:
 Given a 28-day timeframe, this translates to an error "budget" of:
 > 20.16 minutes (.0005 * (28 * 24 * 60))
 
+---
+
+# What is Infrastructure as Code (IaC)?
+
+Infrastructure as code (IaC) is a way to manage and provision infrastructure resources using configuration files and automation tools. 
+
+![bg right:40% 90% fit](img/iac.drawio.png)
 
 ---
 
-- **Infrastructure as Code (IaC):** Automating infrastructure management.
+## IaC in SRE & DevOps: Key Benefits
+
+1. **Automation & Consistency:** IaC automates provisioning, ensuring consistent infrastructure across environments.
+2. **Version Control:** Infrastructure, like software code, can be versioned, allowing for easy rollbacks and history tracking.
+
+---
+
+## IaC in SRE & DevOps: Scalability & Collaboration
+
+1. **Scalability:** With IaC, scaling infrastructure is as simple as adjusting parameters, facilitating easy growth.
+2. **Collaboration:** Teams can review infrastructure changes like software code, fostering collaboration and preventing errors.
+
+In SRE and DevOps, the drive is to minimize manual work and increase repeatability and reliability. IaC stands as a foundational component for these goals.
 
 ---
 
