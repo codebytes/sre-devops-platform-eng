@@ -9,9 +9,8 @@ footer: 'https://chris-ayers.com'
 
 ![bg left w:500px](./img/sre-devops-plat-eng.drawio.svg)
 
+### Chris Ayers<br>![w:120](img/portrait.png)
 
-![w:120](img/portrait.png)
-## Chris Ayers
 
 ---
 
@@ -36,13 +35,15 @@ footer: 'https://chris-ayers.com'
 
 ---
 
-![bg left:40%](./img/reliability.jpg)
-
+![bg left:40% fit](./img/sre.png)
 # Introduction to SRE
 
 ---
 
-SRE, or Site Reliability Engineering, originated at Google when they tasked a team to enhance the reliability of their services.
+## Site Reliability Engineering (SRE)
+
+**Software Engineering meets Systems Administration** 
+SRE originated at Google in 2003 under the leadership of Ben Treynor Sloss. Recognizing the challenges of separating development and operations, he introduced software engineering principles to operations tasks. This innovative approach led to the creation of the "site reliability engineer" role, blending the expertise of developers and operators.
 
 ---
 
@@ -50,7 +51,11 @@ SRE, or Site Reliability Engineering, originated at Google when they tasked a te
 
 ---
 
-- **Software Engineering meets Systems Administration:** SRE applies software engineering principles to operations tasks.
+## Principles of SRE
+
+- **Embracing Risk**: Managing risks in systems.
+- **Service Level Objectives**: Setting reliability targets.
+- **Eliminating Toil**: Reducing manual tasks.
 
 ---
 
@@ -97,7 +102,7 @@ Given a 28-day timeframe, this translates to an error "budget" of:
 
 ---
 
-# What is Infrastructure as Code (IaC)?
+# Infrastructure as Code (IaC)
 
 Infrastructure as code (IaC) is a way to manage and provision infrastructure resources using configuration files and automation tools. 
 
@@ -118,6 +123,37 @@ Infrastructure as code (IaC) is a way to manage and provision infrastructure res
 2. **Collaboration:** Teams can review infrastructure changes like software code, fostering collaboration and preventing errors.
 
 In SRE and DevOps, the drive is to minimize manual work and increase repeatability and reliability. IaC stands as a foundational component for these goals.
+
+---
+
+## Monitoring & Automation in SRE
+
+- Techniques for effective **monitoring** of distributed systems.
+- The importance of **automation** in operations.
+
+---
+
+## Release & Simplicity in SRE
+
+- Ensuring safe and efficient **software releases**.
+- Importance of keeping systems **simple** and manageable.
+
+---
+
+## Management in SRE
+
+- Training and **onboarding** SREs.
+- **Communication** and collaboration in SRE.
+- Adapting and evolving **SRE practices**.
+
+---
+
+## Conclusions
+
+- Insights from other sectors.
+- Final thoughts and takeaways on SRE.
+
+---
 
 ---
 
