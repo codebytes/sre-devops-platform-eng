@@ -47,15 +47,41 @@ SRE originated at Google in 2003 under the leadership of Ben Treynor Sloss. Reco
 
 ---
 
-## Key Concepts of SRE
+## Principles of SRE
+
+- **Embracing Risk**: Understanding and managing risks in systems.
+- **Service Level Objectives**: Setting and measuring reliability targets.
+- **Eliminating Toil**: Reducing manual, repetitive tasks.
+- **Monitoring Distributed Systems**: Techniques for effective monitoring.
+- **Evolution of Automation at Google**: The journey of automation at Google.
+- **Release Engineering**: Ensuring safe and efficient software releases.
+- **Simplicity**: The importance of keeping systems simple and manageable.
 
 ---
 
-## Principles of SRE
+# Practices 
 
-- **Embracing Risk**: Managing risks in systems.
-- **Service Level Objectives**: Setting reliability targets.
-- **Eliminating Toil**: Reducing manual tasks.
+**Practical Alerting**: Effective alerting strategies.
+**Being On-Call**: Responsibilities and best practices for on-call engineers.
+**Effective Troubleshooting**: Techniques for diagnosing issues.
+**Emergency Response**: Handling emergencies and outages.
+**Managing Incidents**: Incident management best practices.
+**Postmortem Culture**: Learning from failures and mistakes.
+**Tracking Outages**: Keeping a record of system outages.
+**Testing for Reliability**: Ensuring system reliability through testing.
+
+---
+
+# Practices 
+
+**Software Engineering in SRE**: The role of software engineering in SRE.
+**Load Balancing**: Techniques for distributing traffic.
+**Handling Overload**: Managing system overloads.
+**Addressing Cascading Failures**: Preventing failures from affecting multiple systems.
+**Managing Critical State**: Ensuring data consistency and reliability.
+**Data Processing Pipelines**: Managing data flow and processing.
+**Data Integrity**: Ensuring data accuracy and consistency.
+**Reliable Product Launches**: Ensuring successful product launches.
 
 ---
 
