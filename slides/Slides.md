@@ -181,15 +181,36 @@ In SRE and DevOps, the drive is to minimize manual work and increase repeatabili
 
 ---
 
----
-
-![bg left:40%](./img/devops.jpg)
+![bg left fit](./img/devops.png)
 
 # Dive into DevOps
 
 ---
 
 DevOps promotes collaboration between development and operations teams through a set of practices and cultural philosophies.
+
+---
+
+<div class="columns">
+<div>
+
+<br>
+<br>
+
+# “DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.”
+
+## - Donovan Brown
+
+</div>
+<div>
+
+<br>
+<br>
+
+![w:300px center](img/donovan-brown.png)
+
+</div>
+</div>
 
 ---
 
