@@ -40,6 +40,20 @@ footer: 'https://chris-ayers.com'
 
 ---
 
+
+**Site Reliability Engineering (SRE)**
+
+**Origin:** The term originated at Google when they sought to improve the reliability of their services and decided to apply principles of software engineering to operations.
+
+**Key Features:**
+- **SLIs, SLOs, and SLAs:** These metrics help in quantifying and measuring reliability.
+- **Error Budgets:** A balance between release velocity and system reliability.
+- **Automated Operations:** Reduce manual toil through automation.
+
+**Objective:** Ensure services are reliable and available while also allowing for innovation and faster releases.
+
+---
+
 ## Site Reliability Engineering (SRE)
 
 **Software Engineering meets Systems Administration** 
@@ -356,4 +370,53 @@ SRE, DevOps, and Platform Engineering intersect at ensuring efficient and reliab
 - **Collaboration & Automation:** Central to all disciplines.
 - **Continuous Improvement:** Better processes and tools.
 - **End-to-end Responsibility:** From code to operation.
+
+---
+
+**SRE, DevOps, and Platform Engineering: Disentangling the Trio**
+
+---
+
+**Introduction**
+
+In the ever-evolving landscape of software engineering, terms like SRE, DevOps, and Platform Engineering have become increasingly popular. But what do they mean, and how do they differ? Let’s delve into these disciplines and shed light on their distinctions.
+
+---
+
+
+**DevOps**
+
+**Origin:** Coined from merging ‘Development’ and ‘Operations’, DevOps is a cultural shift that promotes collaboration between these two traditionally siloed teams.
+
+**Key Features:**
+- **CI/CD:** Continuous Integration and Continuous Deployment allow for quick code integrations and releases.
+- **Infrastructure as Code (IaC):** Automation of infrastructure tasks.
+- **Feedback Loops:** Quick detection and resolution of issues.
+
+**Objective:** Streamline the process from code development to deployment, ensuring faster release cycles and better product quality.
+
+---
+
+**Platform Engineering**
+
+**Origin:** As companies scaled and sought to manage their infrastructure more efficiently, the discipline of platform engineering emerged.
+
+**Key Features:**
+- **Self-service Platforms:** Tools that allow developers to deploy, manage, and scale applications.
+- **Abstract Complexity:** Providing simpler interfaces to developers by hiding underlying complexities.
+- **Containerization and Orchestration:** Use of containers for application deployment and orchestration tools like Kubernetes to manage them.
+
+**Objective:** Create robust platforms that allow for scalable, efficient deployment and management of applications and services.
+
+---
+
+**SRE vs. DevOps vs. Platform Engineering: The Overlap**
+
+While the three disciplines have distinct objectives, there is a significant overlap. For instance, automation is a common theme across all three. SRE and DevOps both focus on improving the release cycle, while Platform Engineering provides the tools to achieve this. 
+
+---
+
+**Conclusion**
+
+In essence, SRE, DevOps, and Platform Engineering are disciplines that, while distinct, work hand-in-hand. SRE ensures reliability, DevOps promotes collaboration and streamlining, and Platform Engineering provides the tools and platforms necessary to achieve both. Understanding their nuances allows for better implementation and synergy among teams.
 
