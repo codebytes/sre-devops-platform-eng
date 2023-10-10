@@ -5,11 +5,26 @@ transition: cover
 footer: 'https://chris-ayers.com'
 ---
 
-<!-- _footer: 'https://github.com/Codebytes/sre-devops-platform-eng' -->
+<!-- 
+_color: white
+_footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
+-->
 
-![bg left w:500px](./img/sre-devops-plat-eng.drawio.svg)
+![bg](./img/techorama.png)
 
-### Chris Ayers<br>![w:120](img/portrait.png)
+<div class="columns">
+<div>
+
+</div>
+<div>
+
+# SRE, DevOps, and Platform Engineering
+## Unraveling the Differences
+
+### Chris Ayers
+
+</div>
+</div>
 
 
 ---
@@ -27,82 +42,180 @@ footer: 'https://chris-ayers.com'
 
 ---
 
+![bg right w:500px](./img/sre-devops-plat-eng.drawio.svg)
 # Agenda
 
-- Introduction to SRE
+- Common Problems
+- Introduction to <br/>Site Reliability Engineering (SRE)
 - Dive into DevOps
 - Exploring Platform Engineering
 
 ---
 
-![bg left:40% fit](./img/sre.png)
+![bg left:40% w:80%](./img/sre.png)
 # Introduction to SRE
+> Site Reliability Engineering
 
 ---
 
-
-**Site Reliability Engineering (SRE)**
-
-**Origin:** The term originated at Google when they sought to improve the reliability of their services and decided to apply principles of software engineering to operations.
-
-**Key Features:**
-- **SLIs, SLOs, and SLAs:** These metrics help in quantifying and measuring reliability.
-- **Error Budgets:** A balance between release velocity and system reliability.
-- **Automated Operations:** Reduce manual toil through automation.
-
-**Objective:** Ensure services are reliable and available while also allowing for innovation and faster releases.
+# **SRE is what happens when you ask a software engineer to design an operations team**
+*Benjamin Treynor Sloss*
 
 ---
 
-## Site Reliability Engineering (SRE)
+# Responsibilities
 
-**Software Engineering meets Systems Administration** 
-SRE originated at Google in 2003 under the leadership of Ben Treynor Sloss. Recognizing the challenges of separating development and operations, he introduced software engineering principles to operations tasks. This innovative approach led to the creation of the "site reliability engineer" role, blending the expertise of developers and operators.
+<div class="columns">
+<div>
 
----
+- Availability
+- Latency
+- Performance
+- Efficiency
 
-## Principles of SRE
+</div>
+<div>
 
-- **Embracing Risk**: Understanding and managing risks in systems.
-- **Service Level Objectives**: Setting and measuring reliability targets.
-- **Eliminating Toil**: Reducing manual, repetitive tasks.
-- **Monitoring Distributed Systems**: Techniques for effective monitoring.
-- **Evolution of Automation at Google**: The journey of automation at Google.
-- **Release Engineering**: Ensuring safe and efficient software releases.
-- **Simplicity**: The importance of keeping systems simple and manageable.
+- Change Management
+- Monitoring
+- Emergency Response
+- Capacity Planning
 
----
-
-# Practices 
-
-**Practical Alerting**: Effective alerting strategies.
-**Being On-Call**: Responsibilities and best practices for on-call engineers.
-**Effective Troubleshooting**: Techniques for diagnosing issues.
-**Emergency Response**: Handling emergencies and outages.
-**Managing Incidents**: Incident management best practices.
-**Postmortem Culture**: Learning from failures and mistakes.
-**Tracking Outages**: Keeping a record of system outages.
-**Testing for Reliability**: Ensuring system reliability through testing.
+</div>
+</div>
 
 ---
 
-# Practices 
-
-**Software Engineering in SRE**: The role of software engineering in SRE.
-**Load Balancing**: Techniques for distributing traffic.
-**Handling Overload**: Managing system overloads.
-**Addressing Cascading Failures**: Preventing failures from affecting multiple systems.
-**Managing Critical State**: Ensuring data consistency and reliability.
-**Data Processing Pipelines**: Managing data flow and processing.
-**Data Integrity**: Ensuring data accuracy and consistency.
-**Reliable Product Launches**: Ensuring successful product launches.
+# <!-- fit --> Hope is not a strategy.
+>Common SRE Saying
 
 ---
 
+# SRE: Principles & Practices
+
+- A deep dive into the principles and practices that guide Site Reliability Engineering.
+
+---
+
+# **Embracing Risk**
+   - Understand that achieving near-perfect reliability is challenging.
+   - Evaluate unexpected failures to enhance reliability.
+   - Systems can fail; the key is to learn and improve.
+   - SRE teams should deeply understand and tackle risks head-on.
+   - Weigh the cost of boosting reliability against its benefits to customers.
+
+---
+
+# Reliability
+
+| Reliability Level   | Downtime Per Month   | Downtime Per Year    | Cost |
+|---------------------|----------------------|----------------------|------|
+| **99.9% (3 Nines)** | 43.8 minutes         | 8 hours 45 minutes   | $  |
+| **99.95%**          | 21.9 minutes         | 4 hours 22.5 minutes | $$  |
+| **99.99% (4 Nines)**| 4.38 minutes         | 52 minutes 35 seconds| $$$ |
+| **99.995%**         | 2.19 minutes         | 26 minutes 17.5 seconds | $$$$ |
+| **99.999% (5 Nines)** | 26 seconds          | 5 minutes 15 seconds | $$$$$|
+>https://uptime.is/five-nines
+
+---
+
+# **Service Level Objectives**
 | SLI | SLO | SLA |
 |---|---|---|
 | Service Level Indicator | Service Level Objective | Service Level Agreement |
-| Metrics that provide a quantitative measure of the level of service. | A target level or range of performance for the SLI over a period of time. | A formal, often contractual agreement between a service provider and its users that defines the expected performance and availability metrics, as well as penalties for not meeting them. |
+| Metrics quantifying service quality. | Target performance for an SLI over time. | Contract defining expected metrics and penalties for non-compliance. |
+| Error rate, latency, throughput | 99.9% uptime over 30 days | 99.95% uptime, refunds if downtime > 0.05% in a month. |
+| Measure service quality. | Set expectations and goals for service quality. | Formalize commitments, set consequences for breaches. |
+
+---
+
+# **Toil**
+
+- *Toil* is defined as the manual work required to keep a service running.
+- SREs aim to eliminate toil, typically through automation.
+![bg right w:90%](https://imgs.xkcd.com/comics/automation.png)
+
+---
+
+![bg right fit](img/toil.png)
+# Managing Toil
+- Identify which SRE tasks consume the most time.
+- Not all manual tasks are toil. Pinpoint true toil tasks.
+- Introduce guidelines and procedures.
+- Develop features that diminish toil and boost reliability & productivity.
+
+---
+
+### **Managing & Reducing Toil**
+
+- **Assessment**: Identify which SRE tasks consume the most time.
+- **Strategy**: Not all manual tasks are toil. Pinpoint true toil tasks.
+- **Implementation**: Introduce guidelines and procedures.
+- **End Goal**: Develop features that diminish toil and boost reliability & productivity.
+---
+
+- **Monitoring Distributed Systems**
+   - Techniques for effective system monitoring.
+
+---
+
+- **Evolution of Automation**
+   - Google's journey in automation.
+
+---
+
+- **Release Engineering**
+   - Ensure safe and efficient software rollouts.
+
+---
+
+- **Simplicity in Systems**
+   - Prioritize simplicity and manageability.
+
+---
+
+## SRE Practices
+
+- **Alerting & On-Call**
+   - Effective alert strategies.
+   - Best practices for on-call engineers.
+
+---
+
+- **Troubleshooting & Emergency**
+   - Techniques for diagnosing issues.
+   - Handling system emergencies and outages.
+
+---
+
+- **Incident Management**
+   - Best practices from incident response to postmortem.
+
+---
+
+- **Tracking & Testing**
+   - Keeping records of outages.
+   - Ensuring reliability through rigorous testing.
+
+---
+
+- **Software Engineering in SRE**
+   - The intertwined roles of software engineering and SRE.
+
+---
+
+- **Load Balancing & Overload**
+   - Distribute traffic effectively and manage system overloads.
+
+---
+
+- **Failures & Critical State**
+   - Address cascades and ensure data consistency.
+
+---
+
+- **Data Processing & Product Launches**
+   - Manage data flows and ensure successful product rollouts.
 
 ---
 
@@ -419,4 +532,141 @@ While the three disciplines have distinct objectives, there is a significant ove
 **Conclusion**
 
 In essence, SRE, DevOps, and Platform Engineering are disciplines that, while distinct, work hand-in-hand. SRE ensures reliability, DevOps promotes collaboration and streamlining, and Platform Engineering provides the tools and platforms necessary to achieve both. Understanding their nuances allows for better implementation and synergy among teams.
+
+---
+
+# DevOps vs. SRE
+
+---
+
+## Introduction
+
+- DevOps and SRE: Overlapping and distinct areas in software engineering.
+
+---
+
+## Similarities
+
+1. **Bridge Ops and Dev**: Synergy between teams.
+2. **Automation**: Central to both.
+3. **Combine Development and Operations**: Integrated processes.
+
+---
+
+## Differences: SRE
+
+- **Focus**: Production, technical practices, metrics.
+- **Concerns**: System availability, reliability, production.
+- **People**: System engineers writing code.
+- **Approach**: "How" things are done.
+
+---
+
+## Differences: DevOps
+
+- **Focus**: Removing silos, end-to-end process.
+- **Concerns**: Product development and delivery. 
+- **People**: Diverse teams - product owners to ops.
+- **Approach**: "What" unifies dev and ops.
+
+---
+
+## DevOps in Depth
+
+### Definition
+
+- Automating software lifecycle with dev/ops principles.
+
+---
+
+### DevOps: Focus & Goals
+
+- **Collaboration, Automation, CI/CD**
+- Goals: Improve collaboration, automate tasks, efficient pipelines.
+
+---
+
+### DevOps: Day-to-Day
+
+- Infrastructure provisioning & configuration.
+- CI/CD setup.
+- Monitoring & troubleshooting.
+
+---
+
+### DevOps: Tools
+
+- **Provisioning**: Ansible, SaltStack, Puppet...
+- **CI/CD**: Jenkins, GitLab...
+- **Containers**: Docker, Kubernetes...
+- **Cloud & Monitoring**: AWS, Nagios...
+
+---
+
+### DevOps: Skills
+
+- Linux, Git, Cloud, CI/CD, Scripting.
+
+---
+
+## SRE in Depth
+
+### Definition
+
+- Ensuring scalability, reliability, availability of systems.
+
+---
+
+### SRE: Focus & Goals
+
+- **Stability, Reliability, Availability**
+- Goals: Reduce incidents, improve recovery, best monitoring practices.
+
+---
+
+### SRE: Day-to-Day
+
+- Ensure software reliability.
+- Monitor metrics.
+- Infrastructure automation.
+- Root cause analysis.
+
+---
+
+### SRE: Tools
+
+- **SLO Monitoring**: New Relic, Datadog...
+- **Incidents**: Slack, PagerDuty...
+- **Automation & Observability**: Terraform, OpenTelemetry...
+
+---
+
+### SRE: Skills
+
+- Coding, Monitoring, Troubleshooting, Networking.
+
+---
+
+## Case Studies
+
+- **Netflix (SRE)**: Simian Army.
+- **Etsy (DevOps)**: CI/CD pipelines.
+
+---
+
+## Dual Approaches
+
+- **Theory vs. Practical**: Two sides of a coin.
+- **DevOps**: Core development, failures, tickets.
+- **SRE**: Core implementation, deployment, monitoring.
+
+---
+
+## Final Thoughts
+
+- **DevOps Principles**: Reduce silos, accept failure, measure.
+- **SRE Philosophy**: Engineer-designed operations.
+- **Noteworthy**: Patrick Debois, Andrew Shafer, Amazon's motto.
+
+---
 
