@@ -336,7 +336,7 @@ table {
 ---
 
 ## Tech Metrics Overview
-| Metric | Full Form | Purpose |
+| Metric | Definition | Purpose |
 |---|---|---|
 | MTBF | Mean Time Before Failure | Average time between failures. |
 | MTTR | Mean Time To Recovery/Repair/Respond/Resolve | Time to recover from a failure. |
@@ -459,9 +459,9 @@ table {
 
 ---
 
-# **Release Engineering: Essence & Impact**
+# Release Engineering
 
-- **Essence**: Safe and efficient software updates deployment.
+- Safe and efficient software updates deployment.
    - Key areas: Version control, CI/CD, rollout strategies, canary releases, and monitoring.
 
 - **Impact**:  
@@ -644,6 +644,11 @@ Understanding team structures and their interactions is crucial for efficient so
 
 ---
 
+# Shift Left
+![fit bg right:80%](img/shift-left.png)
+
+---
+
 ![bg right fit](./img/cicd-pipeline.png)
 
 # CI/CD
@@ -698,14 +703,6 @@ The goal of IaC is to make it easier to deploy and manage infrastructure in a re
 
 ---
 
-### Monitoring & Logging
-
-- Continuous observation of applications and infrastructure.
-- Rapidly detect, address, and prevent issues.
-- Provide insights into system health, usage, and potential bottlenecks.
-
----
-
 # Configuration Management
 
 Configuration Management ensures that system configurations remain consistent and optimized. It plays a pivotal role in modern DevOps practices by ensuring smooth deployments, scalability, and system reliability.
@@ -727,6 +724,7 @@ Configuration Management ensures that system configurations remain consistent an
 - **Faster Recovery:** In case of failures, quickly revert to a known good configuration.
 
 ---
+
 ![bg left fit](./img/devsecops.jpg)
 
 # DevSecOps: Security at Speed
@@ -773,6 +771,15 @@ Integrating security within the DevOps pipeline, DevSecOps ensures that security
 - Lightweight, standalone executable software packages.
 - Ensure consistency across environments and scalability.
 - Tools like Docker for containerization and Kubernetes for orchestration.
+
+---
+
+### Monitoring & Logging
+
+- Continuous observation of applications and infrastructure.
+- Rapidly detect, address, and prevent issues.
+- Provide insights into system health, usage, and potential bottlenecks.
+
 
 ---
 ![bg left fit](./img/platform.png)
