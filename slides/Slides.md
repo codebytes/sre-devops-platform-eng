@@ -52,6 +52,60 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 
 ---
 
+# The Historical Divide
+
+---
+
+![bg right fit](img/silos.jpg)
+## Development and Operations: Separate Realms
+
+Historically, Development and Operations teams operated in silos, each with distinct responsibilities and goals.
+
+---
+
+# Historical Divide: Development vs Operations
+
+| Aspect| Development (Dev)                             | Operations (Ops)                                   |
+|-------------------------|--------------------------------------------------|-------------------------------------------------------|
+| Focus       | Writing & updating code                          | Managing infrastructure & ensuring service reliability |
+| Challenges      | Ensuring code works across environments          | Handling unforeseen changes & mitigating disruptions   |
+| Mindset             | "Let's release new features quickly!"            | "Change can introduce issues; caution is necessary."   |
+| Metrics | Speed of feature releases, Code quality          | System uptime, Response time to incidents              |
+
+---
+
+## The Wall of Confusion
+
+<div class="columns">
+<div>
+
+The lack of collaboration often resulted in a "Wall of Confusion," where software released by the Development team would encounter issues in the environments managed by the Operations team.
+
+</div>
+<div>
+
+![center](./img/wall-of-confusion.png)
+
+</div>
+</div>
+
+---
+
+### Results of the Divide
+
+- **Slower Releases:** Waiting for Operations to deploy.
+- **Missed Deadlines:** Unforeseen issues leading to back-and-forth.
+- **Blame Games:** Pointing fingers when things went wrong.
+- **Decreased Productivity:** Duplication of effort and miscommunication.
+
+---
+
+### Bridging the Gap
+
+The realization of these inefficiencies led to the rise of the DevOps movement, seeking to break down the silos and promote collaboration between Development and Operations.
+
+---
+
 ![bg left:40% w:80%](./img/sre.png)
 # Introduction to SRE
 > Site Reliability Engineering
@@ -86,6 +140,12 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 
 ---
 
+<!-- _footer: "" -->
+
+![bg w:80%](img/yo-sre.png)
+
+---
+
 # <!-- fit --> Hope is not a strategy.
 >Common SRE Saying
 
@@ -99,6 +159,7 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
    - Balance the costs and benefits of increased reliability.
 
 ---
+
 <!-- _footer: "" -->
 
 ![bg](img/risk.png)
@@ -220,6 +281,32 @@ Over 28 days, this is:
 - Build features that reduce toil and enhance reliability.
 
 ---
+
+## Examples of Toil
+
+- Regularly restarting a failing service.
+- Manually scaling services up/down based on traffic.
+- Running repetitive database maintenance tasks.
+- Hand-creating reports from logs.
+- Daily cleanup of temporary files.
+- Manually updating configuration files across servers.
+
+---
+
+
+# Feedback Loops in SRE
+
+- **Feedback Loops** ensure that systems are continuously improved based on results or feedback.
+- They promote a culture of iterative refinement and rapid response.
+
+## Why are they important?
+
+- Identify areas of improvement quickly.
+- Adjust strategies or methodologies based on outcomes.
+- Foster better communication and understanding between teams.
+
+---
+
 # Monitoring Distributed Systems
 
 ## Why Monitor?
@@ -248,6 +335,16 @@ table {
 
 ---
 
+## Tech Metrics Overview
+| Metric | Full Form | Purpose |
+|---|---|---|
+| MTBF | Mean Time Before Failure | Average time between failures. |
+| MTTR | Mean Time To Recovery/Repair/Respond/Resolve | Time to recover from a failure. |
+| MTTF | Mean Time To Failure | Expected time to the first failure. |
+| MTTA | Mean Time To Acknowledge | Time to acknowledge an incident. |
+
+---
+
 # Effective Alerting
 - Alert based on potential user impact.
 - Notify when nearing an SLO breach.
@@ -272,18 +369,106 @@ table {
 
 ---
 
-# Release Engineering
+# Alerting & On-Call
 
-- It focuses on deploying software updates safely and efficiently.
-- Key responsibilities include version control, CI/CD pipelines, rollout strategies, canary releases, and monitoring.
+- **Prioritize Alerts**  
+   - High, medium, low severity levels.
+   - Avoid alert fatigue with proper thresholds.
+   
+- **Ensure Alert Relevancy**  
+   - Only trigger alerts for actionable events.
+   - Refine and tune alerts regularly.
 
 ---
-# Effective Release Engineering
 
-- Reduces downtime during updates for high availability.
-- Speeds up time-to-market through automation.
-- Maintains consistency and minimizes potential issues.
-- Enhances reliability with safe deployments and monitoring.
+# On-Call Engineers
+- **Rotation Schedules**  
+   - Avoid burnout with shifts and breaks.
+   - Implement regular handoffs for continuity.
+   
+- **Necessary Resources** 
+   - Access to documentation and tools.
+   - Clear escalation paths for critical issues.
+
+---
+
+# Troubleshooting & Emergency
+- **Systematic Approach**  
+   - Start from checking basic functionalities.
+   - Use a top-down or bottom-up methodology.
+   
+- **Use Monitoring and Logging**  
+   - Access to real-time data.
+   - Historical logs for pattern analysis.
+
+---
+
+#  Handling System Emergencies and Outages
+- **Establish Clear Communication Channels**  
+   - Inform stakeholders promptly.
+   - Regular status updates to teams and users.
+   
+- **Implement Quick Rollbacks**  
+   - Have mechanisms to revert changes.
+   - Backup systems to restore functionality.
+
+---
+
+# Incident Management
+- **Incident Classification**  
+   - Define what constitutes an incident.
+   - Categorize by impact and urgency.
+   
+- **Assemble a Response Team**  
+   - Cross-functional members for expertise.
+   - Clear roles and responsibilities.
+
+---
+
+# Blameless Postmortems
+
+- Understand incidents and prevent future ones.
+- Focus on learning, not blaming.
+
+<div class="columns">
+<div>
+
+## **Core Steps**:
+
+- **Documentation**:  
+   - Events timeline.
+   - Taken actions.
+   
+- **Review Meeting**:  
+   - Discuss outcomes.
+   - Define action items.
+
+</div>
+<div>
+
+## **Components**:
+
+- **Timeline**: Sequence of events.
+- **Impact Analysis**: Affected entities.
+- **Root Cause**: Reason for incident.
+- **Actions**: Preventative measures.
+
+
+</div>
+</div>
+
+---
+
+# **Release Engineering: Essence & Impact**
+
+- **Essence**: Safe and efficient software updates deployment.
+   - Key areas: Version control, CI/CD, rollout strategies, canary releases, and monitoring.
+
+- **Impact**:  
+   - Minimized downtime.
+   - Faster deployments via automation.
+   - Consistency and reduced issues.
+   - Enhanced system reliability.
 
 ---
 
@@ -294,6 +479,19 @@ table {
 - The "Blast Radius" refers to the potential impact of a change or failure.
 - Understanding and managing the blast radius is crucial in minimizing disruptions.
 - SREs focus on reducing the blast radius to ensure system stability and reliability.
+
+---
+
+# Feature Flags & Toggles
+
+- **Feature Flags** (or Feature Toggles) are a technique that allows teams to modify system behavior without changing code.
+  
+## Benefits
+
+- Enable/Disable features without deploying new code.
+- Gradually roll out features to a subset of users.
+- Easily roll back problematic features.
+- Test in production, ensuring real-world performance.
 
 ---
 
@@ -331,7 +529,7 @@ Continuous monitoring and feedback gather performance insights.
 
 # Blue Green Deployments
 
-![bg right w:90%](img/blue-green1.drawio.png)
+![bg right:40% w:90%](img/blue-green1.drawio.png)
 
 - Parallel Environments: Maintain Blue (production) and Green (updates).
 - Zero Downtime: Switch between Blue and Green without downtime.
@@ -342,7 +540,7 @@ Continuous monitoring and feedback gather performance insights.
 
 # Blue Green Deployments
 
-![bg right w:90%](img/blue-green2.drawio.png)
+![bg right:40% w:90%](img/blue-green2.drawio.png)
 
 - Controlled Release: Gradually shift traffic from Blue to Green.
 - Canary Testing: Test updates with a small portion of traffic in the Green environment.
@@ -351,147 +549,11 @@ Continuous monitoring and feedback gather performance insights.
 
 ---
 
-## SRE Practices
-
-- **Alerting & On-Call**
-   - Effective alert strategies.
-   - Best practices for on-call engineers.
-
----
-
-- **Troubleshooting & Emergency**
-   - Techniques for diagnosing issues.
-   - Handling system emergencies and outages.
-
----
-
-- **Incident Management**
-   - Best practices from incident response to postmortem.
-
----
-
-- **Tracking & Testing**
-   - Keeping records of outages.
-   - Ensuring reliability through rigorous testing.
-
----
-
-- **Software Engineering in SRE**
-   - The intertwined roles of software engineering and SRE.
-
----
-
-- **Load Balancing & Overload**
-   - Distribute traffic effectively and manage system overloads.
-
----
-
-- **Failures & Critical State**
-   - Address cascades and ensure data consistency.
-
----
-
-- **Data Processing & Product Launches**
-   - Manage data flows and ensure successful product rollouts.
-
----
-
-# Error Budgets
-
----
-
-## Components of Error Budgets
-
-1. **Objective:** The desired success level, typically a percentage.
-    - **Example:** 99.95%
-2. **SLI (Service Level Indicator):** An evaluation used to differentiate the number of failed events.
-    - **Example:** 95th percentile latency of API requests over 5 mins is < 100ms.
-3. **Timeframe:** Introducing a recency bias to the SLI.
-    - **Example:** Previous 28 days.
-
----
-
-## Constructing an SLO
-
-Given the example components, the SLO can be expressed as:
-
-> "99.95% of the 95th percentile latency of API requests over 5 mins is < 100ms over the previous 28 days."
-
----
-
-## Calculating the Error Budget
-
-The Error Budget is derived from:
-> Error Budget = 1 - Objective of the SLO
-
-**Example Calculation:**
-(1 - .9995 = .0005) or 0.05%
-
-Given a 28-day timeframe, this translates to an error "budget" of:
-> 20.16 minutes (.0005 * (28 * 24 * 60))
-
----
-
-# Infrastructure as Code (IaC)
-
-Infrastructure as code (IaC) is a way to manage and provision infrastructure resources using configuration files and automation tools. 
-
-![bg right:40% 90% fit](img/iac.drawio.png)
-
----
-
-## IaC in SRE & DevOps: Key Benefits
-
-1. **Automation & Consistency:** IaC automates provisioning, ensuring consistent infrastructure across environments.
-2. **Version Control:** Infrastructure, like software code, can be versioned, allowing for easy rollbacks and history tracking.
-
----
-
-## IaC in SRE & DevOps: Scalability & Collaboration
-
-1. **Scalability:** With IaC, scaling infrastructure is as simple as adjusting parameters, facilitating easy growth.
-2. **Collaboration:** Teams can review infrastructure changes like software code, fostering collaboration and preventing errors.
-
-In SRE and DevOps, the drive is to minimize manual work and increase repeatability and reliability. IaC stands as a foundational component for these goals.
-
----
-
-## Monitoring & Automation in SRE
-
-- Techniques for effective **monitoring** of distributed systems.
-- The importance of **automation** in operations.
-
----
-
-## Release & Simplicity in SRE
-
-- Ensuring safe and efficient **software releases**.
-- Importance of keeping systems **simple** and manageable.
-
----
-
-## Management in SRE
-
-- Training and **onboarding** SREs.
-- **Communication** and collaboration in SRE.
-- Adapting and evolving **SRE practices**.
-
----
-
-## Conclusions
-
-- Insights from other sectors.
-- Final thoughts and takeaways on SRE.
-
----
-
 ![bg left fit](./img/devops.png)
 
 # Dive into DevOps
 
----
-
-DevOps promotes collaboration between development and operations teams through a set of practices and cultural philosophies.
+DevOps, popularized by figures like **Patrick Debois** and **Andrew Shafer**, emphasizes collaboration between development and operations, focusing on *cultural shifts*, *automation*, and *feedback loops* for faster, reliable software releases.
 
 ---
 
@@ -518,24 +580,143 @@ DevOps promotes collaboration between development and operations teams through a
 
 ---
 
-## Key Concepts of DevOps
+## Cultural Shifts in DevOps
 
-- **CI/CD:** Automatic build, test, and deploy processes.
-
----
-
-- **Infrastructure as Code:** Automation of infrastructure tasks.
-
----
-
-- **Feedback Loops:** Quick detection and resolution of issues.
+- **Collaboration Over Silos:** Breaking down the barriers between development and operations teams to work together seamlessly.
+- **Blameless Culture:** Instead of pointing fingers, teams focus on learning from failures and continuously improving.
+- **Empowerment and Ownership:** Every team member takes responsibility for the software's life cycle, from development to production.
+- **Continuous Learning:** Regular retrospectives and a focus on iterative improvement.
 
 ---
 
-- **Collaborative Culture:** Breaking silos and shared responsibilities.
+# How we Work
+- Agile
+- Scrum
+- Pair Programming
+- Kanban
+ 
+---
+
+![bg fit left:40%](./img/team-topologies.jpg)
+
+# Team Topologies
+
+Understanding team structures and their interactions is crucial for efficient software delivery and system reliability. "Team Topologies" by Matthew Skelton and Manuel Pais offers insight into different team patterns for IT delivery.
 
 ---
 
+## Four Core Team Patterns
+
+1. **Stream-aligned Team:** Directly aligned to a flow of work from a segment of the business domain.
+2. **Enabling Team:** Helps a stream-aligned team overcome obstacles.
+3. **Complicated Subsystem Team:** Where mathematics/calculation is the main focus, separate from the main flow.
+4. **Platform Team:** Offers services to other teams to accelerate delivery.
+
+---
+
+![bg w:80%](./img/Shapes%20Normal.png)
+ 
+---
+
+![bg right fit](./img/cicd-pipeline.png)
+
+# CI/CD
+
+**Continuous Integration & Continuous Deployment** streamline the software development lifecycle, ensuring that code changes are continuously integrated, tested, and delivered to production.
+
+---
+
+<div class="columns">
+<div>
+
+## Continuous Integration (CI)
+
+- Automatically integrate and validate code changes.
+- Run tests and security scans
+
+</div>
+<div>
+
+## Continuous Deployment (CD)
+
+- Automate deployment processes to various environments.
+- Ensures production-ready releases.
+
+</div>
+</div>
+
+---
+
+## Benefits of CI/CD
+
+- 🚀 **Faster Releases:** Reduced manual processes speed up software delivery.
+- 🐞 **Improved Quality:** Early and frequent testing leads to fewer bugs.
+- 🔁 **Rapid Feedback:** Immediate feedback on code changes for developers.
+- 📈 **Increased Productivity:** Less time spent on manual tasks.
+
+---
+
+### Infrastructure as Code (IaC)
+
+- Manage and provision infrastructure using code and automation.
+- Ensures consistent and repeatable infrastructure deployments.
+- Easily scale and replicate environments, reducing manual setup and errors.
+
+---
+
+### Feedback Loops
+
+- Incorporate real-time feedback throughout the development process.
+- Iteratively refine based on results or feedback.
+- Enables rapid adjustments and promotes continuous improvement.
+
+---
+
+### Collaborative Culture
+
+- Foster open communication and collaboration across departments.
+- Eliminate traditional silos between development and operations.
+- Shared responsibilities ensure everyone is accountable for the end product.
+
+---
+
+### Monitoring & Logging
+
+- Continuous observation of applications and infrastructure.
+- Rapidly detect, address, and prevent issues.
+- Provide insights into system health, usage, and potential bottlenecks.
+
+---
+
+### Configuration Management
+
+- Maintain and manage the software's consistency, performance, and functional attributes.
+- Tools like Ansible, Chef, and Puppet standardize and automate configurations.
+
+---
+
+### Microservices
+
+- Design software as suites of independently deployable services.
+- Enables faster development, testing, and scaling of individual components.
+
+---
+
+### Containers & Orchestration
+
+- Lightweight, standalone executable software packages.
+- Ensure consistency across environments and scalability.
+- Tools like Docker for containerization and Kubernetes for orchestration.
+
+---
+
+### DevSecOps
+
+- Embed security into the DevOps process.
+- Automated security checks during CI/CD.
+- Ensures secure code and infrastructure from the start.
+
+---
 
 ![bg left:40%](./img/platform.jpg)
 
