@@ -108,15 +108,23 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 ![bg](img/risk.png)
 
 ---
+<style scoped>
+table { display: table; }
+tr { display: table-row; }
+td, th { display: table-cell; }
+table {
+  width: 100%;
+}
+</style>
 # Reliability
 
-| Level  | Monthly Downtime | Annual Downtime | Cost |
-|-------|------------------|-----------------|------|
-| **99.9%** | 43.8m   | 8.75h   | $   |
-| **99.95%**| 21.9m   | 4.375h  | $$  |
-| **99.99%**| 4.38m   | 52.6m   | $$$ |
-| **99.995%**| 2.19m  | 26.3m   | $$$$|
-| **99.999%**| 26s    | 5.25m   | $$$$$|
+| Level       | Monthly Downtime | Annual Downtime | Cost  |
+| ----------- | ---------------- | --------------- | ----- |
+| **99.9%**   | 43.8m            | 8.75h           | $     |
+| **99.95%**  | 21.9m            | 4.375h          | $$    |
+| **99.99%**  | 4.38m            | 52.6m           | $$$   |
+| **99.995%** | 2.19m            | 26.3m           | $$$$  |
+| **99.999%** | 26s              | 5.25m           | $$$$$ |
 
 >https://uptime.is/five-nines
 
@@ -150,11 +158,11 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 
 # Components of Error Budgets
 
-| Component | Description  | Example |
-|-----------|--------------|---------|
-| **Objective** | Desired success level | 99.95% |
-| **SLI** | Evaluation of failed events | 95th percentile latency < 100ms over 5 mins |
-| **Timeframe** | Recency bias for the SLI | Previous 28 days |
+| Component     | Description                 | Example                                     |
+| ------------- | --------------------------- | ------------------------------------------- |
+| **Objective** | Desired success level       | 99.95%                                      |
+| **SLI**       | Evaluation of failed events | 95th percentile latency < 100ms over 5 mins |
+| **Timeframe** | Recency bias for the SLI    | Previous 28 days                            |
 
 ---
 
@@ -216,19 +224,60 @@ Over 28 days, this is:
 - Build features that reduce toil and enhance reliability.
 
 ---
+# Monitoring Distributed Systems
 
-- **Monitoring Distributed Systems**
-   - Techniques for effective system monitoring.
+## Why Monitor?
+- Distributed systems span multiple locations, increasing complexity.
+- Detect anomalies early to prevent bigger problems.
+- Gain insights into system health and pinpoint areas for improvement.
+
+---
+<style scoped>
+table { display: table; }
+tr { display: table-row; }
+td, th { display: table-cell; }
+table {
+  width: 100%;
+}
+</style>
+
+# Core Monitoring Types
+
+|                 | **Black-box**       | **White-box**          |
+| --------------- | ------------------- | ---------------------- |
+| **Focus**       | System Outputs      | System Internals       |
+| **Reflection**  | User Experience     | Component Interactions |
+| **Data Source** | External Tests      | Internal Metrics/Logs  |
+| **Use Case**    | Availability Checks | Debugging & Profiling  |
+
+---
+
+# Effective Alerting
+- Alert based on potential user impact.
+- Notify when nearing an SLO breach.
+- Make alerts clear and directly useful.
+![bg right fit](img/monitoring.png)
+
+---
+
+# Monitoring Distributed Systems
+## Best Practices
+- **Consistent Metrics**: Adopt uniform metrics throughout components for clarity.
+- **Granular Monitoring**: Detailed observation, both system-wide and at the component level.
+- **Postmortems**: Utilize monitoring data post-incident to derive insights and prevent recurrences.
+
+---
+
+# Monitoring Distributed Systems
+## Visualization & Review
+- **Dashboards**: Implement live visualization tools for real-time system status overviews.
+- **Feedback Loops**: Continually refine monitoring based on feedback and new challenges.
+- **Regular Reviews**: Periodically examine the system's monitoring setup for relevance and efficiency.
 
 ---
 
 - **Release Engineering**
    - Ensure safe and efficient software rollouts.
-
----
-
-- **Simplicity in Systems**
-   - Prioritize simplicity and manageability.
 
 ---
 
