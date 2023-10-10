@@ -63,7 +63,7 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 
 ---
 
-# Responsibilities
+# SRE Responsibilities
 
 <div class="columns">
 <div>
@@ -93,74 +93,132 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 
 # SRE: Principles & Practices
 
-- A deep dive into the principles and practices that guide Site Reliability Engineering.
-
 ---
 
-# **Embracing Risk**
-   - Understand that achieving near-perfect reliability is challenging.
-   - Evaluate unexpected failures to enhance reliability.
-   - Systems can fail; the key is to learn and improve.
-   - SRE teams should deeply understand and tackle risks head-on.
-   - Weigh the cost of boosting reliability against its benefits to customers.
+# Embracing Risk
+   - Achieving high reliability is tough.
+   - Learn from unexpected failures.
+   - Always expect systems to have shortcomings.
+   - SRE teams should proactively address risks.
+   - Balance the costs and benefits of increased reliability.
 
 ---
+<!-- _footer: "" -->
 
+![bg](img/risk.png)
+
+---
 # Reliability
 
-| Reliability Level   | Downtime Per Month   | Downtime Per Year    | Cost |
-|---------------------|----------------------|----------------------|------|
-| **99.9% (3 Nines)** | 43.8 minutes         | 8 hours 45 minutes   | $  |
-| **99.95%**          | 21.9 minutes         | 4 hours 22.5 minutes | $$  |
-| **99.99% (4 Nines)**| 4.38 minutes         | 52 minutes 35 seconds| $$$ |
-| **99.995%**         | 2.19 minutes         | 26 minutes 17.5 seconds | $$$$ |
-| **99.999% (5 Nines)** | 26 seconds          | 5 minutes 15 seconds | $$$$$|
+| Level  | Monthly Downtime | Annual Downtime | Cost |
+|-------|------------------|-----------------|------|
+| **99.9%** | 43.8m   | 8.75h   | $   |
+| **99.95%**| 21.9m   | 4.375h  | $$  |
+| **99.99%**| 4.38m   | 52.6m   | $$$ |
+| **99.995%**| 2.19m  | 26.3m   | $$$$|
+| **99.999%**| 26s    | 5.25m   | $$$$$|
+
 >https://uptime.is/five-nines
 
 ---
 
-# **Service Level Objectives**
+# Service Level Objectives
 | SLI | SLO | SLA |
 |---|---|---|
 | Service Level Indicator | Service Level Objective | Service Level Agreement |
-| Metrics quantifying service quality. | Target performance for an SLI over time. | Contract defining expected metrics and penalties for non-compliance. |
-| Error rate, latency, throughput | 99.9% uptime over 30 days | 99.95% uptime, refunds if downtime > 0.05% in a month. |
-| Measure service quality. | Set expectations and goals for service quality. | Formalize commitments, set consequences for breaches. |
+| Metrics for service quality, e.g., error rate. | Targets, e.g., 99.9% uptime/month. | Contracts with set metrics and penalties. |
+| Assess service quality. | Define service quality goals. | Formalize commitments and consequences. |
 
 ---
 
-# **Toil**
+![SLA Pyramid](img/sla-slo-sli.png)
 
-- *Toil* is defined as the manual work required to keep a service running.
-- SREs aim to eliminate toil, typically through automation.
+---
+
+# Error Budgets
+
+- A tool to balance reliability and rate of innovation.
+- Allows for a predetermined level of acceptable unreliability.
+
+---
+
+<!-- _footer: "" -->
+
+![bg  fit ](img/budget.png)
+
+---
+
+# Components of Error Budgets
+
+| Component | Description  | Example |
+|-----------|--------------|---------|
+| **Objective** | Desired success level | 99.95% |
+| **SLI** | Evaluation of failed events | 95th percentile latency < 100ms over 5 mins |
+| **Timeframe** | Recency bias for the SLI | Previous 28 days |
+
+---
+
+# Constructing an Error Budget
+
+> "99.95% of the 95th percentile latency of API requests over 5 mins is < 100ms over the previous 28 days."
+
+**Error Budget** = 1 - *Objective*
+
+For our example:
+
+- Objective: 99.95% (or 0.9995)
+- Error Budget: 0.05% (or 0.0005)
+
+Over 28 days, this is:
+
+> 20.16 minutes (.0005 * (28 * 24 * 60))
+
+---
+
+# When the Error Budget is Exhausted?
+
+<div class="columns">
+<div>
+
+- **Halt**: 
+  - No new features or deployments.
+  - No changes or experiments.
+
+</div>
+<div>
+
+- **Prioritize**:
+  - Enhance reliability.
+  - Minimize toil.
+  - Bolster monitoring & automation.
+  - Strengthen testing.
+
+</div>
+</div>
+
+* **Improve reliability.**
+* **Improve reliability.**
+
+---
+
+# Toil
+- Manual work needed to maintain a service.
+- SREs use automation to minimize toil.
 ![bg right w:90%](https://imgs.xkcd.com/comics/automation.png)
 
 ---
 
 ![bg right fit](img/toil.png)
 # Managing Toil
-- Identify which SRE tasks consume the most time.
-- Not all manual tasks are toil. Pinpoint true toil tasks.
-- Introduce guidelines and procedures.
-- Develop features that diminish toil and boost reliability & productivity.
+- Identify time-consuming SRE tasks.
+- Distinguish actual toil from manual tasks.
+- Set clear guidelines.
+- Build features that reduce toil and enhance reliability.
 
----
-
-### **Managing & Reducing Toil**
-
-- **Assessment**: Identify which SRE tasks consume the most time.
-- **Strategy**: Not all manual tasks are toil. Pinpoint true toil tasks.
-- **Implementation**: Introduce guidelines and procedures.
-- **End Goal**: Develop features that diminish toil and boost reliability & productivity.
 ---
 
 - **Monitoring Distributed Systems**
    - Techniques for effective system monitoring.
-
----
-
-- **Evolution of Automation**
-   - Google's journey in automation.
 
 ---
 
