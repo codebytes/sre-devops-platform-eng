@@ -597,6 +597,22 @@ DevOps, popularized by figures like **Patrick Debois** and **Andrew Shafer**, em
  
 ---
 
+### Feedback Loops
+
+- Incorporate real-time feedback throughout the development process.
+- Iteratively refine based on results or feedback.
+- Enables rapid adjustments and promotes continuous improvement.
+
+---
+
+### Collaborative Culture
+
+- Foster open communication and collaboration across departments.
+- Eliminate traditional silos between development and operations.
+- Shared responsibilities ensure everyone is accountable for the end product.
+
+---
+
 ![bg fit left:40%](./img/team-topologies.jpg)
 
 # Team Topologies
@@ -615,7 +631,17 @@ Understanding team structures and their interactions is crucial for efficient so
 ---
 
 ![bg w:80%](./img/Shapes%20Normal.png)
- 
+
+---
+### Conway's Law
+
+"Organizations which design systems ... are constrained to produce designs which are copies of the communication structures of these organizations."
+
+**Key Takeaways:**
+- The structure of your organization influences your system's design.
+- Ensure good communication and collaboration for better systems.
+- Consider organizational changes to drive desired software architecture.
+
 ---
 
 ![bg right fit](./img/cicd-pipeline.png)
@@ -664,19 +690,11 @@ Understanding team structures and their interactions is crucial for efficient so
 
 ---
 
-### Feedback Loops
+## Why use Infrastructure as Code (IaC)?
 
-- Incorporate real-time feedback throughout the development process.
-- Iteratively refine based on results or feedback.
-- Enables rapid adjustments and promotes continuous improvement.
+The goal of IaC is to make it easier to deploy and manage infrastructure in a repeatable, reliable way, and to reduce the risk of errors caused by manual configuration.
 
----
-
-### Collaborative Culture
-
-- Foster open communication and collaboration across departments.
-- Eliminate traditional silos between development and operations.
-- Shared responsibilities ensure everyone is accountable for the end product.
+![bg right:40% 90% fit](img/iac.drawio.png)
 
 ---
 
@@ -688,10 +706,56 @@ Understanding team structures and their interactions is crucial for efficient so
 
 ---
 
-### Configuration Management
+# Configuration Management
 
-- Maintain and manage the software's consistency, performance, and functional attributes.
-- Tools like Ansible, Chef, and Puppet standardize and automate configurations.
+Configuration Management ensures that system configurations remain consistent and optimized. It plays a pivotal role in modern DevOps practices by ensuring smooth deployments, scalability, and system reliability.
+
+---
+
+## What is Configuration Management?
+
+- **Consistency:** Ensures every instance of the software runs the same way in every environment.
+- **Automation:** Reduces manual intervention, making deployments faster and error-free.
+- **Scalability:** Facilitates easy replication of configurations across multiple servers or instances.
+
+---
+
+## Why Configuration Management?
+
+- **Version Control:** Track and control changes to maintain system stability.
+- **Auditing & Compliance:** Easily verify and ensure system configurations meet required standards.
+- **Faster Recovery:** In case of failures, quickly revert to a known good configuration.
+
+---
+![bg left fit](./img/devsecops.jpg)
+
+# DevSecOps: Security at Speed
+
+Integrating security within the DevOps pipeline, DevSecOps ensures that security is considered at every phase of the software development lifecycle, rather than being tacked on at the end.
+
+---
+
+## What is DevSecOps?
+
+- **Proactive Security:** Catching vulnerabilities early, when they're easiest and least expensive to fix.
+- **Continuous Security:** Automated checks and validations throughout CI/CD pipelines.
+- **Shared Responsibility:** Every team member, from developers to operations, plays a role in ensuring security.
+
+---
+
+## Benefits of DevSecOps
+
+- **Reduced Risk:** Early detection of vulnerabilities leads to minimized exposure.
+- **Faster Time-to-Market:** Automated security checks reduce the delays associated with traditional security audits.
+- **Improved Compliance:** Regular checks ensure software always meets security standards and regulations.
+
+---
+
+## Implementing DevSecOps
+
+- **Automated Scans:** Tools like Snyk or OWASP Dependency-Check for dependency scanning.
+- **Infrastructure as Code Security:** Scanning templates for security best practices.
+- **Training & Culture:** Encouraging developers and operations to adopt a security-first mindset.
 
 ---
 
@@ -702,6 +766,8 @@ Understanding team structures and their interactions is crucial for efficient so
 
 ---
 
+![bg right](img/works.png)
+
 ### Containers & Orchestration
 
 - Lightweight, standalone executable software packages.
@@ -709,322 +775,169 @@ Understanding team structures and their interactions is crucial for efficient so
 - Tools like Docker for containerization and Kubernetes for orchestration.
 
 ---
+![bg left fit](./img/platform.png)
 
-### DevSecOps
-
-- Embed security into the DevOps process.
-- Automated security checks during CI/CD.
-- Ensures secure code and infrastructure from the start.
+# Platform Engineering Deep Dive
 
 ---
 
-![bg left:40%](./img/platform.jpg)
+## What is Platform Engineering?
 
-# Exploring Platform Engineering
-
-Platform Engineering is the nexus of software development, infrastructure management, and best practices, centered on providing robust, scalable, and efficient platforms for applications and services.
+Platform Engineering blends software development, infrastructure management, and best practices to offer scalable and efficient platforms for applications.
 
 ---
 
-## Defining Platform Engineering
+## Core Aspects of Platform Engineering
 
-Platform Engineering facilitates:
-- Streamlined software deployments
-- Infrastructure scalability
-- Seamless integration between tools and services
-- Accelerated development processes
+- Seamless software deployments
+- Scalable infrastructure 
+- Efficient integration of tools and services
+- Accelerating the development lifecycle
 
-It's about laying the foundation upon which applications thrive.
-
----
-
-## Key Concepts of Platform Engineering
+*Building the bedrock for thriving applications.*
 
 ---
 
-### Self-service Platforms
+![bg right](img/self-service.jpg)
 
-Empowering developers with:
-- Automated deployment pipelines
-- Infrastructure provisioning with a click
-- Monitoring and logging integrations
+## The Power of Self-service Platforms
 
-The aim? Minimize manual intervention and speed up the development lifecycle.
-
----
-
-### Abstract Complexity
-
-What does this mean?
-- Hide intricate infrastructure details from developers.
-- Provide standardized templates for deployment.
-- Ensure developers focus on code, not infra setup.
-
-Simplified processes, maximized efficiency.
+Equip developers with:
+- Automated deployment workflows
+- Click-to-provision infrastructure
+- Integrated monitoring and logging
+- Consistent deployment templates
 
 ---
 
-### Microservices & Containers
+## Abstracting Complexity
 
-Why are they crucial?
-- **Flexibility:** Break applications into smaller, manageable units.
-- **Scalability:** Scale components independently as needed.
-- **Portability:** Containers ensure consistent environments across stages.
+- Shield developers from underlying infrastructure complexities.
+- Provide uniform deployment templates.
+- Enable focus on high-quality code development.
 
-Tools like Kubernetes orchestrate these containers, ensuring reliability and scalability.
-
----
-
-### Scaling & Performance
-
-As demand grows:
-- Dynamically allocate resources.
-- Load balance to distribute traffic.
-- Monitor in real-time for performance insights.
-
-Optimizing resources ensures the system remains responsive even under peak loads.
+*Achieve optimal workflows and heightened efficiency.*
 
 ---
 
-## Why is Platform Engineering Vital?
+### Gall's Law in Action
 
-1. **Developer Experience**
-1. **Accelerated Development:** Less time grappling with infrastructure means more time coding.
-1. **Consistency:** Same tools, processes, and environments across teams.
-1. **Reliability:** Best practices ensure high availability and minimal downtime.
-1. **Future-proofing:** Designed with growth and change in mind.
+"Successful complex systems evolve from working simple systems. Complex systems designed from scratch fail. Begin with a functional simple system."
+
+*Lessons Learned:*
+- Prioritize iterative development.
+- Sidestep initial over-complication.
+- Champion simplicity for maintainability and growth.
 
 ---
 
-## Challenges in Enterprise Workflow
+![bg left fit](img/k8s.png)
 
-- **Ticketing Systems:** Delays due to lengthy "ServiceNow" ticket resolutions.
-  
-- **Approval Bottlenecks:** 
-  - Security signoffs
-  - Network configurations
-  - Multiple rejections without clear feedback
-  - Ambiguous task descriptions leading to incorrect implementations
+## Embracing Microservices & Containers
 
+**Advantages:**
+- **Flexibility:** Decompose apps into smaller units.
+- **Scalability:** Independently scale components.
+- **Portability:** Consistent environments through containers.
+
+---
+
+## Considerations for Scaling & Performance
+
+- Adjust resources dynamically as demand spikes.
+- Utilize load balancing for optimal traffic distribution.
+- Monitor continuously to glean performance insights.
+
+*Guarantee consistent system responsiveness.*
+
+---
+
+## Platform Engineering's Value Proposition
+
+- **Optimal Developer Experience**
+- **Faster Development:** Focus on code, not infra hitches.
+- **Uniformity:** Unified tools and environments.
+- **Resilience:** Maximized availability.
+- **Future-proof:** Adaptable designs.
+
+---
+
+## Challenges in Modern Workflows
+
+- **Legacy Ticketing Systems:** Lags due to extended ticket resolutions.
+- **Approval Hurdles:** 
+  - Multiple security clearances.
+  - Network setups.
+  - Vague feedback loops.
 
 ![bg right:40% fit](img/one-eternity-later.png)
 
 ---
 
-# Enhancing Developer Experience
+## Improving the Developer Experience
 
-- **Self-service:** Automated processes for greater developer autonomy.
-- **Simplified Infrastructure:** Shielding developers from complex infrastructure details.
-- **Microservices & Containers:** Ensuring application flexibility, scalability, and consistent environments.
-- **Efficient Scaling:** Dynamic resource allocation and optimized load balancing.
-- **Holistic Experience:** Faster development cycles, uniformity across tools, reliable systems
-
+- **Promote Self-service:** Grant developers greater autonomy.
+- **Conceal Complex Infrastructure:** Simplify infra complexities.
+- **Promote Microservices & Containers:** For flexibility and consistency.
+- **Embrace Efficient Scaling:** Dynamic resources and balanced loads.
 
 ---
 
-## Conclusion
+## SRE, DevOps, and Platform Engineering
 
-Platform Engineering is more than just tools and processes. It's an ethos that prioritizes efficiency, reliability, and scalability, ensuring applications and services are always at their best.
-
----
-
-## Conclusion
-
----
-
-SRE, DevOps, and Platform Engineering intersect at ensuring efficient and reliable software delivery and operation.
+Three pillars ensuring robust software delivery and operations. They prioritize:
+- **Collaboration & Automation**
+- **Continuous Enhancement**
+- **End-to-End Ownership**
 
 ---
 
-**Key Takeaways**
-
-- **Collaboration & Automation:** Central to all disciplines.
-- **Continuous Improvement:** Better processes and tools.
-- **End-to-end Responsibility:** From code to operation.
+## Disentangling SRE, DevOps, and Platform Engineering
 
 ---
 
-**SRE, DevOps, and Platform Engineering: Disentangling the Trio**
+## Overlapping Disciplines
+
+Though each has its unique aims, there’s a convergence:
+- **Automation:** Central to all.
+- **Improved Release Cycles:** Shared goal of SRE and DevOps.
+- **Tool Provisioning:** Platform Engineering's forte.
 
 ---
 
-**Introduction**
+## Concluding Thoughts
 
-In the ever-evolving landscape of software engineering, terms like SRE, DevOps, and Platform Engineering have become increasingly popular. But what do they mean, and how do they differ? Let’s delve into these disciplines and shed light on their distinctions.
+SRE ensures robustness, DevOps champions teamwork, and Platform Engineering provides indispensable tools. Together, they redefine software delivery.
 
 ---
 
 
-**DevOps**
-
-**Origin:** Coined from merging ‘Development’ and ‘Operations’, DevOps is a cultural shift that promotes collaboration between these two traditionally siloed teams.
-
-**Key Features:**
-- **CI/CD:** Continuous Integration and Continuous Deployment allow for quick code integrations and releases.
-- **Infrastructure as Code (IaC):** Automation of infrastructure tasks.
-- **Feedback Loops:** Quick detection and resolution of issues.
-
-**Objective:** Streamline the process from code development to deployment, ensuring faster release cycles and better product quality.
+# Questions
+![bg right](./img/owl.png)
 
 ---
 
-**Platform Engineering**
+<div class="columns">
+<div>
 
-**Origin:** As companies scaled and sought to manage their infrastructure more efficiently, the discipline of platform engineering emerged.
+## Resources
 
-**Key Features:**
-- **Self-service Platforms:** Tools that allow developers to deploy, manage, and scale applications.
-- **Abstract Complexity:** Providing simpler interfaces to developers by hiding underlying complexities.
-- **Containerization and Orchestration:** Use of containers for application deployment and orchestration tools like Kubernetes to manage them.
+#### GitHub Repo
+#### https://github.com/codebytes/sre-devops-platform-eng
+#### Blog
+#### https://chris-ayers.com
 
-**Objective:** Create robust platforms that allow for scalable, efficient deployment and management of applications and services.
+</div>
 
----
+<div>
 
-**SRE vs. DevOps vs. Platform Engineering: The Overlap**
+## Contact
 
-While the three disciplines have distinct objectives, there is a significant overlap. For instance, automation is a common theme across all three. SRE and DevOps both focus on improving the release cycle, while Platform Engineering provides the tools to achieve this. 
+<i class="fa-brands fa-twitter"></i> Twitter: @Chris\_L\_Ayers
+<i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
+<i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
+<i class="fa fa-window-maximize"></i> Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
+<i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
 
----
-
-**Conclusion**
-
-In essence, SRE, DevOps, and Platform Engineering are disciplines that, while distinct, work hand-in-hand. SRE ensures reliability, DevOps promotes collaboration and streamlining, and Platform Engineering provides the tools and platforms necessary to achieve both. Understanding their nuances allows for better implementation and synergy among teams.
-
----
-
-# DevOps vs. SRE
-
----
-
-## Introduction
-
-- DevOps and SRE: Overlapping and distinct areas in software engineering.
-
----
-
-## Similarities
-
-1. **Bridge Ops and Dev**: Synergy between teams.
-2. **Automation**: Central to both.
-3. **Combine Development and Operations**: Integrated processes.
-
----
-
-## Differences: SRE
-
-- **Focus**: Production, technical practices, metrics.
-- **Concerns**: System availability, reliability, production.
-- **People**: System engineers writing code.
-- **Approach**: "How" things are done.
-
----
-
-## Differences: DevOps
-
-- **Focus**: Removing silos, end-to-end process.
-- **Concerns**: Product development and delivery. 
-- **People**: Diverse teams - product owners to ops.
-- **Approach**: "What" unifies dev and ops.
-
----
-
-## DevOps in Depth
-
-### Definition
-
-- Automating software lifecycle with dev/ops principles.
-
----
-
-### DevOps: Focus & Goals
-
-- **Collaboration, Automation, CI/CD**
-- Goals: Improve collaboration, automate tasks, efficient pipelines.
-
----
-
-### DevOps: Day-to-Day
-
-- Infrastructure provisioning & configuration.
-- CI/CD setup.
-- Monitoring & troubleshooting.
-
----
-
-### DevOps: Tools
-
-- **Provisioning**: Ansible, SaltStack, Puppet...
-- **CI/CD**: Jenkins, GitLab...
-- **Containers**: Docker, Kubernetes...
-- **Cloud & Monitoring**: AWS, Nagios...
-
----
-
-### DevOps: Skills
-
-- Linux, Git, Cloud, CI/CD, Scripting.
-
----
-
-## SRE in Depth
-
-### Definition
-
-- Ensuring scalability, reliability, availability of systems.
-
----
-
-### SRE: Focus & Goals
-
-- **Stability, Reliability, Availability**
-- Goals: Reduce incidents, improve recovery, best monitoring practices.
-
----
-
-### SRE: Day-to-Day
-
-- Ensure software reliability.
-- Monitor metrics.
-- Infrastructure automation.
-- Root cause analysis.
-
----
-
-### SRE: Tools
-
-- **SLO Monitoring**: New Relic, Datadog...
-- **Incidents**: Slack, PagerDuty...
-- **Automation & Observability**: Terraform, OpenTelemetry...
-
----
-
-### SRE: Skills
-
-- Coding, Monitoring, Troubleshooting, Networking.
-
----
-
-## Case Studies
-
-- **Netflix (SRE)**: Simian Army.
-- **Etsy (DevOps)**: CI/CD pipelines.
-
----
-
-## Dual Approaches
-
-- **Theory vs. Practical**: Two sides of a coin.
-- **DevOps**: Core development, failures, tickets.
-- **SRE**: Core implementation, deployment, monitoring.
-
----
-
-## Final Thoughts
-
-- **DevOps Principles**: Reduce silos, accept failure, measure.
-- **SRE Philosophy**: Engineer-designed operations.
-- **Noteworthy**: Patrick Debois, Andrew Shafer, Amazon's motto.
-
----
-
+</div>
+</div>
