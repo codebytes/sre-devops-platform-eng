@@ -91,10 +91,6 @@ _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 
 ---
 
-# SRE: Principles & Practices
-
----
-
 # Embracing Risk
    - Achieving high reliability is tough.
    - Learn from unexpected failures.
@@ -276,8 +272,82 @@ table {
 
 ---
 
-- **Release Engineering**
-   - Ensure safe and efficient software rollouts.
+# Release Engineering
+
+- It focuses on deploying software updates safely and efficiently.
+- Key responsibilities include version control, CI/CD pipelines, rollout strategies, canary releases, and monitoring.
+
+---
+# Effective Release Engineering
+
+- Reduces downtime during updates for high availability.
+- Speeds up time-to-market through automation.
+- Maintains consistency and minimizes potential issues.
+- Enhances reliability with safe deployments and monitoring.
+
+---
+
+# Blast Radius of Change
+
+![bg right fit](img/blast-radius.png)
+
+- The "Blast Radius" refers to the potential impact of a change or failure.
+- Understanding and managing the blast radius is crucial in minimizing disruptions.
+- SREs focus on reducing the blast radius to ensure system stability and reliability.
+
+---
+
+# Canary Deployments
+
+![bg right w:55%](img/canary1.drawio.png)
+
+A release strategy involving gradual rollout to a small group before full deployment.
+
+---
+
+# Canary Deployments
+
+![bg right w:55%](img/canary2.drawio.png)
+
+"Canaries" are the initial users/servers to detect issues or bugs in the new release.
+
+---
+
+# Canary Deployments
+
+![bg right w:55%](img/canary3.drawio.png)
+
+Incremental deployment reduces the risk of widespread outages.
+
+---
+
+# Canary Deployments
+
+![bg right w:55%](img/canary4.drawio.png)
+
+Continuous monitoring and feedback gather performance insights.
+
+---
+
+# Blue Green Deployments
+
+![bg right w:90%](img/blue-green1.drawio.png)
+
+- Parallel Environments: Maintain Blue (production) and Green (updates).
+- Zero Downtime: Switch between Blue and Green without downtime.
+- Testing & Validation: Thoroughly validate updates in the Green environment.
+- Instant Rollback: Quickly revert to the stable Blue environment if issues arise.
+
+---
+
+# Blue Green Deployments
+
+![bg right w:90%](img/blue-green2.drawio.png)
+
+- Controlled Release: Gradually shift traffic from Blue to Green.
+- Canary Testing: Test updates with a small portion of traffic in the Green environment.
+- Traffic Cut-Over: Switch all traffic to Green after successful validation.
+- Rollback Option: Instantly return to the stable Blue environment if needed.
 
 ---
 
