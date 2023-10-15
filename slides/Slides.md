@@ -6,25 +6,15 @@ footer: 'https://chris-ayers.com'
 ---
 
 <!-- 
-_color: white
 _footer: 'https://github.com/Codebytes/sre-devops-platform-eng'
 -->
 
-![bg](./img/techorama.png)
-
-<div class="columns">
-<div>
-
-</div>
-<div>
+![bg left w:500px](./img/sre-devops-plat-eng.drawio.svg)
 
 # SRE, DevOps, and Platform Engineering
 ## Unraveling the Differences
 
 ### Chris Ayers
-
-</div>
-</div>
 
 
 ---
