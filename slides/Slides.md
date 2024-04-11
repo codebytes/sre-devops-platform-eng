@@ -263,15 +263,6 @@ Over 28 days, this is:
 
 ---
 
-![bg right fit](img/toil.png)
-# Managing Toil
-- Identify time-consuming SRE tasks.
-- Distinguish actual toil from manual tasks.
-- Set clear guidelines.
-- Build features that reduce toil and enhance reliability.
-
----
-
 ## Examples of Toil
 
 - Regularly restarting a failing service.
@@ -283,6 +274,14 @@ Over 28 days, this is:
 
 ---
 
+![bg right fit](img/toil.png)
+# Managing Toil
+- Identify time-consuming SRE tasks.
+- Distinguish actual toil from manual tasks.
+- Set clear guidelines.
+- Build features that reduce toil and enhance reliability.
+
+---
 
 # Feedback Loops in SRE
 
