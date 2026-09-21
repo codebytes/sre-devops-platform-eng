@@ -1,31 +1,25 @@
 # SRE, DevOps, and Platform Engineering
 
-This repository contains resources and demos for the talk "SRE, DevOps, and Platform Engineering" by Chris Ayers.
+Explore the differences and overlap between SRE, DevOps, and Platform Engineering, and how their strategies, practices, and tools improve software delivery and reliability.
 
 ## Slides
 
-The slides for the talk can be found at:\
-[http://chris-ayers.com/sre-devops-platform-eng/](http://chris-ayers.com/sre-devops-platform-eng/)
-
-## Repository Content
-
-This repository showcases various strategies, best practices, and tools associated with SRE, DevOps, and Platform Engineering.
+[View HTML slides](https://chris-ayers.com/sre-devops-platform-eng/) | [Download PDF](https://chris-ayers.com/sre-devops-platform-eng/Slides.pdf)
 
 ## Resources
 
+- [Slide source](slides/Slides.md)
 - [Site Reliability Engineering - Google](https://sre.google/)
 - [The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/)
 - [Platform Engineering Resources](https://platformengineering.io/resources/)
 
-## Connect with Chris Ayers
+## Contact
 
-Feel free to connect with Chris Ayers on social media and visit his blog for more insights on SRE, DevOps, Platform Engineering, and other topics:
+**Chris Ayers**, Principal Software Engineer
 
-- Twitter: [@Chris_L_Ayers](https://twitter.com/Chris_L_Ayers)
-- Mastodon: [@Chrisayers@hachyderm.io](https://hachyderm.io/@Chrisayers)
-- LinkedIn: [chris-l-ayers](https://linkedin.com/in/chris-l-ayers/)
-- Blog: [https://chris-ayers.com/](https://chris-ayers.com/)
-- GitHub: [Codebytes](https://github.com/codebytes)
+Azure EngOps AzRel, Microsoft
+
+[Blog](https://chris-ayers.com/) | [GitHub](https://github.com/codebytes) | [LinkedIn](https://linkedin.com/in/chris-l-ayers/) | [Bluesky](https://bsky.app/profile/chris-ayers.com) | [Mastodon](https://hachyderm.io/@Chrisayers)
 
 ## License
 
