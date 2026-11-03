@@ -6,6 +6,11 @@ Explore the differences and overlap between SRE, DevOps, and Platform Engineerin
 
 [View HTML slides](https://chris-ayers.com/sre-devops-platform-eng/) | [Download PDF](https://chris-ayers.com/sre-devops-platform-eng/Slides.pdf)
 
+## Recordings
+
+- [PowerShell + DevOps Global Summit 2024 (Confreaks)](https://www.youtube.com/watch?v=nvCyXX55-JU)
+- [PowerShell + DevOps Global Summit 2024 (PowerShell.org)](https://www.youtube.com/watch?v=A8qqLoJnQ-A)
+
 ## Resources
 
 - [Slide source](slides/Slides.md)
